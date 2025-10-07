@@ -1,4 +1,4 @@
-# almaarefa-live
+# maarefa-hub
 
 Designed by **Khaled Al-Muntasir**  
 📧 maswuwl@hotmail.com  
