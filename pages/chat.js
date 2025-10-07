@@ -3,19 +3,18 @@ import { useRouter } from 'next/router'
 import { ChatProvider } from '../components/ChatContext'
 import BubbleInput from '../components/BubbleInput'
 import PreviewBubble from '../components/PreviewBubble'
-import { useUserStore } from '../store/userStore' // تأكد أن هذا الملف موجود
+import userStore from '../store/userStore'
 
 export default function ChatPage() {
   const router = useRouter()
-  const { isLoggedIn } = useUserStore()
 
   useEffect(() => {
-    if (!isLoggedIn) {
-      router.push('/login') // توجيه إلى صفحة تسجيل الدخول
+    if (!userStore.isLoggedIn) {
+      router.push('/login')
     }
-  }, [isLoggedIn])
+  }, [])
 
-  if (!isLoggedIn) return null // لا تعرض شيء أثناء التوجيه
+  if (!userStore.isLoggedIn) return null
 
   return (
     <ChatProvider>
